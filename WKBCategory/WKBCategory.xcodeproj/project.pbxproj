@@ -14,6 +14,12 @@
 		22262115236F0C3000BBED12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22262114236F0C3000BBED12 /* Assets.xcassets */; };
 		22262118236F0C3000BBED12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22262116236F0C3000BBED12 /* LaunchScreen.storyboard */; };
 		2226211B236F0C3000BBED12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2226211A236F0C3000BBED12 /* main.m */; };
+		22262124236F0D4600BBED12 /* UIImage+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 22262123236F0D4600BBED12 /* UIImage+wkb.m */; };
+		22262127236F0E1D00BBED12 /* UIColor+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 22262126236F0E1D00BBED12 /* UIColor+wkb.m */; };
+		2226212A236F127000BBED12 /* NSString+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 22262129236F127000BBED12 /* NSString+wkb.m */; };
+		2226212D236F142000BBED12 /* NSDate+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2226212C236F142000BBED12 /* NSDate+wkb.m */; };
+		22262130236F181E00BBED12 /* UIButton+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 2226212F236F181E00BBED12 /* UIButton+wkb.m */; };
+		22262133236F1E0500BBED12 /* UIView+wkb.m in Sources */ = {isa = PBXBuildFile; fileRef = 22262132236F1E0500BBED12 /* UIView+wkb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,18 @@
 		22262117236F0C3000BBED12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22262119236F0C3000BBED12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2226211A236F0C3000BBED12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22262122236F0D4600BBED12 /* UIImage+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+wkb.h"; sourceTree = "<group>"; };
+		22262123236F0D4600BBED12 /* UIImage+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+wkb.m"; sourceTree = "<group>"; };
+		22262125236F0E1D00BBED12 /* UIColor+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+wkb.h"; sourceTree = "<group>"; };
+		22262126236F0E1D00BBED12 /* UIColor+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+wkb.m"; sourceTree = "<group>"; };
+		22262128236F127000BBED12 /* NSString+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+wkb.h"; sourceTree = "<group>"; };
+		22262129236F127000BBED12 /* NSString+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+wkb.m"; sourceTree = "<group>"; };
+		2226212B236F142000BBED12 /* NSDate+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+wkb.h"; sourceTree = "<group>"; };
+		2226212C236F142000BBED12 /* NSDate+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+wkb.m"; sourceTree = "<group>"; };
+		2226212E236F181E00BBED12 /* UIButton+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+wkb.h"; sourceTree = "<group>"; };
+		2226212F236F181E00BBED12 /* UIButton+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+wkb.m"; sourceTree = "<group>"; };
+		22262131236F1E0500BBED12 /* UIView+wkb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+wkb.h"; sourceTree = "<group>"; };
+		22262132236F1E0500BBED12 /* UIView+wkb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+wkb.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,7 @@
 		22262107236F0C2C00BBED12 /* WKBCategory */ = {
 			isa = PBXGroup;
 			children = (
+				22262121236F0CC100BBED12 /* Category */,
 				22262108236F0C2C00BBED12 /* AppDelegate.h */,
 				22262109236F0C2C00BBED12 /* AppDelegate.m */,
 				2226210B236F0C2C00BBED12 /* SceneDelegate.h */,
@@ -74,6 +93,25 @@
 				2226211A236F0C3000BBED12 /* main.m */,
 			);
 			path = WKBCategory;
+			sourceTree = "<group>";
+		};
+		22262121236F0CC100BBED12 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				22262122236F0D4600BBED12 /* UIImage+wkb.h */,
+				22262123236F0D4600BBED12 /* UIImage+wkb.m */,
+				22262125236F0E1D00BBED12 /* UIColor+wkb.h */,
+				22262126236F0E1D00BBED12 /* UIColor+wkb.m */,
+				22262128236F127000BBED12 /* NSString+wkb.h */,
+				22262129236F127000BBED12 /* NSString+wkb.m */,
+				2226212B236F142000BBED12 /* NSDate+wkb.h */,
+				2226212C236F142000BBED12 /* NSDate+wkb.m */,
+				2226212E236F181E00BBED12 /* UIButton+wkb.h */,
+				2226212F236F181E00BBED12 /* UIButton+wkb.m */,
+				22262131236F1E0500BBED12 /* UIView+wkb.h */,
+				22262132236F1E0500BBED12 /* UIView+wkb.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +188,12 @@
 				2226210A236F0C2C00BBED12 /* AppDelegate.m in Sources */,
 				2226211B236F0C3000BBED12 /* main.m in Sources */,
 				2226210D236F0C2C00BBED12 /* SceneDelegate.m in Sources */,
+				22262130236F181E00BBED12 /* UIButton+wkb.m in Sources */,
+				2226212A236F127000BBED12 /* NSString+wkb.m in Sources */,
+				2226212D236F142000BBED12 /* NSDate+wkb.m in Sources */,
+				22262127236F0E1D00BBED12 /* UIColor+wkb.m in Sources */,
+				22262124236F0D4600BBED12 /* UIImage+wkb.m in Sources */,
+				22262133236F1E0500BBED12 /* UIView+wkb.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
