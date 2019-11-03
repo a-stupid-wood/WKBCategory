@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "WKBCategory"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "WKBCategory"
   spec.description  = "封装自己项目常用到的类别"
   spec.homepage     = "https://github.com/a-stupid-wood/WKBCategory"
