@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/a-stupid-wood/WKBCategory.git", :tag => "#{s.version}" }
   s.requires_arc = true
   s.platform     = :ios, "9.0"
-  s.source_files = "WKBCategory/*."
+  s.source_files = "WKBCategory/*"
   s.frameworks = 'Foundation', 'UIKit'
 end
