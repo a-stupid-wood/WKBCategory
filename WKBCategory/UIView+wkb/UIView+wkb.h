@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (frame)
+@interface UIView (wkb_frame)
 
 @property (nonatomic, assign)CGFloat wkb_x;
 @property (nonatomic, assign)CGFloat wkb_y;
@@ -30,6 +30,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** 垂直居中*/
 - (void)wkb_alignVertical;
+
+@end
+
+@interface UIView (wkb_layer)
+
+/**设置圆角边框*/
+- (void)wkb_layerWithRadius:(CGFloat)radius corner:(UIRectCorner)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 @end
 

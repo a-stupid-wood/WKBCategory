@@ -8,7 +8,7 @@
 
 #import "UIImage+wkb.h"
 
-@implementation UIImage (Color)
+@implementation UIImage (wkb_color)
 
 + (UIImage *)wkb_imageWithColor:(UIColor *)color
 {
@@ -106,7 +106,7 @@
 @end
 
 
-@implementation UIImage (FixOrientation)
+@implementation UIImage (wkb_fixOrientation)
 
 + (UIImage *)wkb_fixOrientation:(UIImage *)aImage {
     

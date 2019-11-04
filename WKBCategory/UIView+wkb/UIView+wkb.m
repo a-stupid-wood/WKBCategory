@@ -8,7 +8,7 @@
 
 #import "UIView+wkb.h"
 
-@implementation UIView (frame)
+@implementation UIView (wkb_frame)
 
 - (void)setWkb_x:(CGFloat)wkb_x
 {
@@ -160,5 +160,35 @@
     self.wkb_y = (self.superview.wkb_height - self.wkb_height) *0.5;
 }
 
+
+@end
+
+@implementation UIView (wkb_layer)
+
+- (void)wkb_layerWithRadius:(CGFloat)radius corner:(UIRectCorner)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
+{
+    if (@available(iOS 11.0, *)) {
+       self.layer.cornerRadius = radius;
+       self.layer.maskedCorners = (CACornerMask)corner;
+       self.layer.borderWidth = borderWidth;
+       self.layer.borderColor = borderColor.CGColor;
+    } else {
+        //设置圆角
+        UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corner cornerRadii:CGSizeMake(radius, radius)];
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+        maskLayer.frame = self.bounds;
+        maskLayer.path = path.CGPath;
+        self.layer.mask = maskLayer;
+        
+        //设置边框
+        CAShapeLayer *borderLayer=[CAShapeLayer layer];
+        borderLayer.path= path.CGPath;
+        borderLayer.fillColor  = [UIColor clearColor].CGColor;
+        borderLayer.strokeColor= borderColor.CGColor;
+        borderLayer.lineWidth= borderWidth;
+        borderLayer.frame=self.bounds;
+        [self.layer addSublayer:borderLayer];
+    }
+}
 
 @end

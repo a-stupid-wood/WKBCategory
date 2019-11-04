@@ -9,7 +9,7 @@
 #import "UIButton+wkb.h"
 #import <objc/runtime.h>
 
-@implementation UIButton (FixMultiClick)
+@implementation UIButton (wkb_fixMultiClick)
 
 static char wkb_acceptEventInterval;
 static char wkb_acceptEventTime;
@@ -84,7 +84,7 @@ static char wkb_acceptEventTime;
 
 @end
 
-@implementation UIButton (EdgeInsertStyle)
+@implementation UIButton (wkb_relayout)
 
 - (void)wkb_layoutButtonWithEdgeInsetsStyle:(WKBButtonEdgeInsetsStyle)style imageTitleSpace:(CGFloat)space
 {
@@ -156,7 +156,7 @@ static char wkb_acceptEventTime;
 
 @end
 
-@implementation UIButton (EnlargeTouchArea)
+@implementation UIButton (wkb_enlargeTouchArea)
 
 static char wkb_topNameKey;
 static char wkb_rightNameKey;

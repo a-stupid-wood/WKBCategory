@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface UIButton (FixMultiClick)
+@interface UIButton (wkb_fixMultiClick)
 
 //重复点击的间隔
 @property (nonatomic, assign) NSTimeInterval wkb_acceptEventInterval;
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, WKBButtonEdgeInsetsStyle) {
     WKBButtonEdgeInsetsStyleRight // image在右，label在左
 };
 
-@interface UIButton (EdgeInsertStyle)
+@interface UIButton (wkb_relayout)
 
 /**
  *  设置button的titleLabel和imageView的布局样式，及间距
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, WKBButtonEdgeInsetsStyle) {
 @end
 
 
-@interface UIButton (EnlargeTouchArea)
+@interface UIButton (wkb_enlargeTouchArea)
 
 /**通过在上下左右增加按钮可响应点击的范围，不过增大的点击范围不能超过按钮的父视图，否则无效*/
 - (void)wkb_setEnlargeEdgeWithTop:(CGFloat) top right:(CGFloat) right bottom:(CGFloat) bottom left:(CGFloat) left;

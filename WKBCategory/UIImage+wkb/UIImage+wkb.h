@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (Color)
+@interface UIImage (wkb_color)
 /**
  *  根据颜色生成一张图片
  *  @param color 颜色
@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-@interface UIImage (FixOrientation)
+@interface UIImage (wkb_fixOrientation)
 
 //调整image的方向
 + (UIImage *)wkb_fixOrientation:(UIImage *)aImage;
