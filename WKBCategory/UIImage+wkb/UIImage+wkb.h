@@ -24,6 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)wkb_createQRForString:(NSString *)qrString;
 
 /**
+ * 根据字符串和图片生成中间带图片的二维码图片
+ * @param qrString 字符串
+ * @param centerImage 居中的图片
+ */
++ (UIImage *)wkb_createQRForString:(NSString *)qrString centerImage:(NSString *)centerImage
+
+/**
  *  压缩图片
  *  @param image 原图
  *  @param newSize 新的尺寸

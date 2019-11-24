@@ -66,6 +66,56 @@
     return [UIImage imageWithCGImage:scaledImage];
 }
 
+//根据字符串和图片生成中间带图片的二维码图片
++ (UIImage *)wkb_createQRForString:(NSString *)qrString centerImage:(NSString *)centerImage
+{
+    NSData *stringData = [qrString dataUsingEncoding:NSUTF8StringEncoding];
+    // 创建filter
+    CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    // 设置内容和纠错级别
+    [qrFilter setValue:stringData forKey:@"inputMessage"];
+    [qrFilter setValue:@"M" forKey:@"inputCorrectionLevel"];
+    // CIImage
+    CIImage *qrCIImage = qrFilter.outputImage;
+    
+    CGRect extent = CGRectIntegral(qrCIImage.extent);
+    CGFloat scale = 200;
+    // 创建bitmap;
+    size_t width = CGRectGetWidth(extent) * scale;
+    size_t height = CGRectGetHeight(extent) * scale;
+    CGColorSpaceRef cs = CGColorSpaceCreateDeviceGray();
+    CGContextRef bitmapRef = CGBitmapContextCreate(nil, width, height, 8, 0, cs, (CGBitmapInfo)kCGImageAlphaNone);
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef bitmapImage = [context createCGImage:qrCIImage fromRect:extent];
+    CGContextSetInterpolationQuality(bitmapRef, kCGInterpolationNone);
+    CGContextScaleCTM(bitmapRef, scale, scale);
+    CGContextDrawImage(bitmapRef, extent, bitmapImage);
+    // 保存bitmap到图片
+    CGImageRef scaledImage = CGBitmapContextCreateImage(bitmapRef);
+    CGContextRelease(bitmapRef);
+    CGImageRelease(bitmapImage);
+    
+    UIImage *img = [UIImage imageWithCGImage:scaledImage];
+    
+    //开启图形上下文
+    UIGraphicsBeginImageContext(img.size);
+    //将二维码的图片画入
+    [img drawInRect:CGRectMake(0, 0, img.size.width, img.size.height)];
+    //在中心划入其他图片
+    UIImage *centerImg=[UIImage imageNamed:@"centerImage"];
+    CGFloat centerW=img.size.width * 0.2;
+    CGFloat centerH=img.size.width * 0.2;
+    CGFloat centerX=(img.size.width-centerW)*0.5;
+    CGFloat centerY=(img.size.height -centerH)*0.5;
+    [centerImg drawInRect:CGRectMake(centerX, centerY, centerW, centerH)];
+    //获取绘制好的图片
+    UIImage *finalImg=UIGraphicsGetImageFromCurrentImageContext();
+    //关闭图像上下文
+    UIGraphicsEndImageContext();
+    return finalImg;
+}
+
+
 //压缩图片
 + (UIImage*)wkb_imageWithImageSimple:(UIImage*)image scaledToSize:(CGSize)newSize
 {
