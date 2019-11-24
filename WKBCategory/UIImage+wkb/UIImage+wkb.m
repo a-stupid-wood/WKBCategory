@@ -102,7 +102,7 @@
     //将二维码的图片画入
     [img drawInRect:CGRectMake(0, 0, img.size.width, img.size.height)];
     //在中心划入其他图片
-    UIImage *centerImg=[UIImage imageNamed:@"centerImage"];
+    UIImage *centerImg=[UIImage imageNamed:centerImage];
     CGFloat centerW=img.size.width * 0.2;
     CGFloat centerH=img.size.width * 0.2;
     CGFloat centerX=(img.size.width-centerW)*0.5;
