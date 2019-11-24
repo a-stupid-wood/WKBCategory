@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @param qrString 字符串
  * @param centerImage 居中的图片
  */
-+ (UIImage *)wkb_createQRForString:(NSString *)qrString centerImage:(NSString *)centerImage
++ (UIImage *)wkb_createQRForString:(NSString *)qrString centerImage:(NSString *)centerImage;
 
 /**
  *  压缩图片
