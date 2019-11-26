@@ -152,7 +152,6 @@
     }
     
     //判断“压处理”的结果是否符合要求，符合要求就over
-    UIImage *resultImage = [UIImage imageWithData:data];
     if (data.length < maxLength) return data;
    
     //缩处理，直接用大小的比例作为缩处理的比例进行处理，因为有取整处理，所以一般是需要两次处理
