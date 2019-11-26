@@ -152,8 +152,9 @@
     }
     
     //判断“压处理”的结果是否符合要求，符合要求就over
+    UIImage *resultImage = [UIImage imageWithData:data];
     if (data.length < maxLength) return data;
-   
+    
     //缩处理，直接用大小的比例作为缩处理的比例进行处理，因为有取整处理，所以一般是需要两次处理
     NSUInteger lastDataLength = 0;
     while (data.length > maxLength && data.length != lastDataLength) {
@@ -161,7 +162,7 @@
         //获取处理后的尺寸
         CGFloat ratio = (CGFloat)maxLength / data.length;
         CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)),
-                                (NSUInteger)(resultImage.size.height * sqrtf(ratio)));
+                                 (NSUInteger)(resultImage.size.height * sqrtf(ratio)));
         //通过图片上下文进行处理图片
         UIGraphicsBeginImageContext(size);
         [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
